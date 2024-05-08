@@ -21,15 +21,7 @@ export class ProductosDetallesComponent {
     //Add 'implements OnInit' to the class.
     this.servicios.getProductos().subscribe((data) => { this.productos = data });
 
-    this.ruta.params.subscribe((p) => {
-      console.log(p['idProductos']);
-      this.id = p['idProductos'];
-      this.videojuegos.forEach(element => {
-        if (element.id == this.id) {
-          this.videojuego = element;
-        }
-      })
-    });
+    
   }
 
   
