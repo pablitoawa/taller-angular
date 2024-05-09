@@ -1,7 +1,20 @@
 <h1 class="text-center">Productos</h1>
 <h6 class="text-center">Filtros</h6>
-<div class="d-flex" style="justify-content: space-between"></div>
-<ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+<div class="d-flex" style="justify-content: space-between; margin: 0 4%;">
+    <div class="custom-select">
+        <select>
+          <option value="">Filter with:</option>
+          <option value="women's clothing">women's clothing</option>
+          <option value="electronics">electronics</option>
+          <option value="jewelery">jewelery</option>
+          <option value="men's clothing">men's clothing</option>
+        </select>
+      </div>
+<div style="width: 50%;">
+    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+</div>
+
+</div>
 
 <div class="container py-5">
   <div class="row">

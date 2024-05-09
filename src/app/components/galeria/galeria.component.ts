@@ -23,8 +23,8 @@ export class GaleriaComponent {
     this.servicios.getProductos().subscribe((data) => { this.productos = data })
   }
 
-  minValue: number = 100;
-  maxValue: number = 400;
+  minValue: number = 0;
+  maxValue: number = 1000;
   options: Options = {
     floor: 0,
     ceil: 1000,
