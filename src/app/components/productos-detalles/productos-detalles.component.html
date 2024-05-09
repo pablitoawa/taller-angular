@@ -1,1 +1,35 @@
-{{ detalles | json }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Card UI Design</title>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="imgBx">
+            <img src="{{ detalles.image }}" alt="Image">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h2>{{ detalles.title }}<br>
+                    <span>{{ detalles.category }}</span>
+                </h2>
+                <p>
+                    {{ detalles.description }}
+                </p>
+                <h3>${{ detalles.price }}</h3>
+                <button routerLink="/productos">Volver</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
