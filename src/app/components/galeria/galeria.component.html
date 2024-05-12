@@ -1,68 +1,70 @@
-<h1 class="text-center">Productos</h1>
-<h6 class="text-center">Filtros</h6>
-<div class="d-flex" style="justify-content: space-between; margin: 0 4%;">
-    <div class="custom-select">
-        <select>
-          <option value="">Filter with:</option>
-          <option value="women's clothing">women's clothing</option>
-          <option value="electronics">electronics</option>
-          <option value="jewelery">jewelery</option>
-          <option value="men's clothing">men's clothing</option>
-        </select>
-      </div>
-<div style="width: 50%;">
-    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
-</div>
-
+<h1 class="text-center">Products</h1>
+<h6 class="text-center">Filters</h6>
+<div class="d-flex" style="justify-content: space-between; margin: 0 4%">
+  <div class="custom-select">
+    <select>
+      <option value="">Filter with:</option>
+      <option value="women's clothing">women's clothing</option>
+      <option value="electronics">electronics</option>
+      <option value="jewelery">jewelery</option>
+      <option value="men's clothing">men's clothing</option>
+    </select>
+  </div>
+  <div style="width: 50%;">
+    <ngx-slider
+      [(value)]="minValue"
+      [(highValue)]="maxValue"
+      [options]="options"
+    ></ngx-slider>
+  </div>
 </div>
 
 <div class="container py-5">
   <div class="row">
-    @for (item of productos; track item) {
-        @if (+item.price >= minValue && +item.price <= maxValue) {
-            <div class="col-lg-3">
-                <div class="product_card">
-                  <div class="card border-0">
-                    <div class="card-header bg-transparent border-0 p-0">
-                      <img class="card-img-top" src="{{ item.image }}" alt="" />
-                      <div class="card-overlay">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                          <button type="button" class="btn btn-secondary">
-                            <i
-                              ><img src="../../../assets/images/icons/shopping-cart.svg"
-                            /></i>
-                          </button>
-                          <button type="button" class="btn btn-light">Add to cart</button>
-                        </div>
-                      </div>
-                      <div class="details-btn">
-                        <a
-                          class="btn btn-dark"
-                          [routerLink]="['/productos-detalles', item.id]"
-                        >
-                          View Details
-                          <i><img src="../../../assets/images/icons/arrow-right.svg" /></i
-                        ></a>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <small>
-                        <a
-                          href="#"
-                          class="text-muted"
-                          style="text-decoration: none; margin: 5px; font-weight: bold"
-                          [routerLink]="['/productos-detalles', item.id]"
-                          >{{ item.title }}</a
-                        >
-                      </small>
-                      <div class="price">
-                        <span class="text-warning">Price: ${{ item.price }}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    @for (item of productos; track item) { @if (+item.price >= minValue &&
+    +item.price <= maxValue) {
+    <div class="col-lg-3 my-2">
+      <div class="product_card">
+        <div class="card border-0">
+          <div class="card-header bg-transparent border-0 p-0">
+            <img class="card-img-top" src="{{ item.image }}" alt="" />
+            <div class="card-overlay">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">
+                  <i
+                    ><img src="../../../assets/images/icons/shopping-cart.svg"
+                  /></i>
+                </button>
+                <button type="button" class="btn btn-light">Add to cart</button>
               </div>
-        }
-    }
+            </div>
+            <div class="details-btn">
+              <a
+                class="btn btn-dark"
+                [routerLink]="['/productos-detalles', item.id]"
+              >
+                View Details
+                <i><img src="../../../assets/images/icons/arrow-right.svg" /></i
+              ></a>
+            </div>
+          </div>
+          <div class="card-body">
+            <small>
+              <a
+                href="#"
+                class="text-muted"
+                style="text-decoration: none; margin: 5px; font-weight: bold"
+                [routerLink]="['/productos-detalles', item.id]"
+                >{{ item.title }}</a
+              >
+            </small>
+            <div class="price">
+              <span class="text-warning">Price: ${{ item.price }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    } }
   </div>
 </div>

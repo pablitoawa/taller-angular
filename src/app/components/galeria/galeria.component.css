@@ -87,6 +87,10 @@
     top: 55%;
   }
   
+  .card-img-top {
+    width: 100%;
+    aspect-ratio: 8/9;
+  }
   
   /*=============
   Aesthetics 
