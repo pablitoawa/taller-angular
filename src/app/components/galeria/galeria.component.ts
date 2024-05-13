@@ -39,4 +39,7 @@ export class GaleriaComponent {
       }
     }
   };
+
+  category: string = "";
+  
 }

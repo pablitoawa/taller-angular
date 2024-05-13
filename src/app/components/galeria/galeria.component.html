@@ -2,7 +2,7 @@
 <h6 class="text-center">Filters</h6>
 <div class="d-flex" style="justify-content: space-between; margin: 0 4%">
   <div class="custom-select">
-    <select>
+    <select name="category" [(ngModel)]="category">
       <option value="">Filter with:</option>
       <option value="women's clothing">women's clothing</option>
       <option value="electronics">electronics</option>
@@ -10,7 +10,7 @@
       <option value="men's clothing">men's clothing</option>
     </select>
   </div>
-  <div style="width: 50%;">
+  <div style="width: 50%">
     <ngx-slider
       [(value)]="minValue"
       [(highValue)]="maxValue"
@@ -22,7 +22,8 @@
 <div class="container py-5">
   <div class="row">
     @for (item of productos; track item) { @if (+item.price >= minValue &&
-    +item.price <= maxValue) {
+    +item.price <= maxValue) { @if (category == "" || category == item.category)
+    {
     <div class="col-lg-3 my-2">
       <div class="product_card">
         <div class="card border-0">
@@ -65,6 +66,6 @@
         </div>
       </div>
     </div>
-    } }
+    } } }
   </div>
 </div>
