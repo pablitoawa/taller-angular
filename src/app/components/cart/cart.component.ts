@@ -9,17 +9,19 @@ import { CarritoService } from '../../services/carrito.service';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent {
-
   servicios = inject(CarritoService);
   carrito: any;
+  productos: any;
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.servicios.getCarrito().subscribe((data) => { this.carrito = data })
+    this.servicios.getCarrito().subscribe((data) => {
+      this.carrito = data;
+      this.productos = this.carrito.length;
+    });
   }
-
 }

@@ -4,48 +4,82 @@
 />
 
 <body>
-  <button type="button" class="bubble" data-bs-toggle="modal" data-bs-target="#view_cart">
+  @if (productos >=1) {
+  <button
+    type="button"
+    class="bubble"
+    data-bs-toggle="modal"
+    data-bs-target="#view_cart"
+  >
     <span class="material-symbols-rounded" style="color: white"
       >shopping_cart</span
     >
   </button>
+  }
 
-  <div class="modal fade" id="view_cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="view_cart"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-lg">
-      <div class="modal-content" style="background-color: #eddada;">
+      <div class="modal-content" style="background-color: #eddada">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Shopping Cart</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
-            <table class="table align-middle mb-3 bg-white">
-                <thead class="bg-light">
-                  <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @for (item of carrito; track item) {
-                        <td><div class="d-flex align-items-center">
-                            <img src="{{item.image}}" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1" id="prod-name">{{item.title}}</p>
-                            </div>
-                          </div></td>
-                          <td>
-                            <span class="badge rounded-pill bg-success m-1" id="prod-quantity" style="font-size: 12px; color: white; padding: 4px 10px;">{{item.quantity}}</span>
-                          </td>
-                          <td>
-                            <p class="fw-bold mb-1" id="prod-name">{{item.price}}</p>
-                          </td>
-                    }
-                </tbody>
-              </table>
+          <table class="table align-middle mb-3 bg-white">
+            <thead class="bg-light">
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            @for (item of carrito; track item) {
+            <tbody>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img
+                    src="{{ item.image }}"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                  />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1" id="prod-name">{{ item.title }}</p>
+                  </div>
+                </div>
+              </td>
+              <td style="padding: 0 23px">
+                <span
+                  class="badge rounded-pill bg-success m-1"
+                  id="prod-quantity"
+                  style="font-size: 12px; color: white; padding: 4px 10px"
+                  >{{ item.quantity }}</span
+                >
+              </td>
+              <td>
+                <p class="fw-bold mb-1" id="prod-total">
+                  {{ item.price * item.quantity }}
+                </p>
+              </td>
+            </tbody>
+            }
+          </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-info">proceed to checkout</button>
+          <button type="button" class="btn btn-info">
+            proceed to checkout
+          </button>
         </div>
       </div>
     </div>
