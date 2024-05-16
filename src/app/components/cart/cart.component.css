@@ -15,5 +15,6 @@
   transition: all 0.2s ease;
 }
 
-
-
+.bubble:hover {
+  transform: scale(1.2);
+}
