@@ -24,4 +24,9 @@ export class CartComponent {
       this.productos = this.carrito.length;
     });
   }
+
+  delete(id: any) {
+    this.servicios.deleteCarrito(id).subscribe()
+    window.location.reload()
+  }
 }
