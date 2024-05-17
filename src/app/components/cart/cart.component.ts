@@ -15,7 +15,7 @@ export class CartComponent {
   servicios = inject(CarritoService);
   carrito: any;
   productos: any;
-
+  rol=localStorage.getItem('rol')
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.

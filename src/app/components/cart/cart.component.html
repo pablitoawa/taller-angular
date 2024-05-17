@@ -4,7 +4,7 @@
 />
 
 <body>
-  @if (productos >=1) {
+  @if (productos >=1 && (rol=='usuario' || rol=='administrador')) {
   <button
     type="button"
     class="bubble"

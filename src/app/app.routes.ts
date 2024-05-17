@@ -5,6 +5,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ProductosDetallesComponent } from './components/productos-detalles/productos-detalles.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -12,6 +13,7 @@ export const routes: Routes = [
     {path: 'productos', component: ProductosComponent},
     {path: 'contacto', component: ContactoComponent},
     {path: 'productos-detalles/:idProductos', component: ProductosDetallesComponent },
+    {path: 'login', component: LoginComponent },
 
 
     {path: '', redirectTo: 'home', pathMatch: 'full'},

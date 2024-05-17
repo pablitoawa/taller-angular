@@ -9,7 +9,7 @@ export class CarritoService {
 
   constructor(private http: HttpClient) {}
 
-  private API_CARRITO = 'http://localhost:3000/carrito';
+  private API_CARRITO = 'http://localhost:3001/carrito';
 
   getCarrito(): Observable<any> {
     return this.http.get(this.API_CARRITO);
