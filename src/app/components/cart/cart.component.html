@@ -42,7 +42,6 @@
                 <th>Product</th>
                 <th>Quantity</th>
                 <th>Total</th>
-                <th>Action</th>
               </tr>
             </thead>
             @for (item of carrito; track item) {
@@ -73,26 +72,12 @@
                   {{ item.price * item.quantity }}
                 </p>
               </td>
-              <td>
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  id="delete-product"
-                  style="background-color: #dc3546;"
-                  (click)="delete(item.id)"
-
-                >
-                  <i
-                    ><img src="../../../assets/images/icons/trash.svg"
-                  /></i>
-                </button>
-              </td>
             </tbody>
             }
           </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" style="background-color: #c19b2e;" >
+          <button type="button" class="btn btn-info">
             proceed to checkout
           </button>
         </div>
