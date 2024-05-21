@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.logo{
+    font-family: "Dancing Script", cursive;
+    text-decoration: none;
+    color: black;
+    font-size: 45px;
+    margin-right: 10px;
+}
+
+.fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.castle{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 2 - 10px);
+}
+
+.login {    
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .castle{
+        width: 100%;
+    }
+}

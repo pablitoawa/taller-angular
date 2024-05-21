@@ -6,6 +6,7 @@ import { Error404Component } from './pages/error404/error404.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ProductosDetallesComponent } from './components/productos-detalles/productos-detalles.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -14,7 +15,7 @@ export const routes: Routes = [
     {path: 'contacto', component: ContactoComponent},
     {path: 'productos-detalles/:idProductos', component: ProductosDetallesComponent },
     {path: 'login', component: LoginComponent },
-    {path: 'register', component:  },
+    {path: 'register', component: RegisterComponent },
 
 
     {path: '', redirectTo: 'home', pathMatch: 'full'},
