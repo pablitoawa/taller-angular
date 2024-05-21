@@ -4,6 +4,7 @@ import { ProductosService } from '../../services/productos.service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Options, LabelType, NgxSliderModule } from '@angular-slider/ngx-slider';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-galeria',
@@ -15,6 +16,7 @@ import { Options, LabelType, NgxSliderModule } from '@angular-slider/ngx-slider'
 export class GaleriaComponent {
 
   servicios = inject(ProductosService);
+  carrito = inject(CarritoService);
   productos: any;
 
   ngOnInit(): void {
@@ -42,4 +44,7 @@ export class GaleriaComponent {
 
   category: string = "";
   
+  addToCart (item: any) {
+    this.carrito.postCarrito(item);
+  }
 }
