@@ -11,8 +11,14 @@ export class CarritoService {
 
   private API_CARRITO = 'http://localhost:3001/carrito';
 
+  /// Leer - GET ///
   getCarrito(): Observable<any> {
     return this.http.get(this.API_CARRITO);
   }
 
+  /// Eliminar - DELETE ///
+  deleteCarrito(id: any): Observable<any> {
+    return this.http.delete(`${this.API_CARRITO}/${id}`);
+  }
+  
 }
