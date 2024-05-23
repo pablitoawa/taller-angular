@@ -29,4 +29,8 @@ export class ProductosService {
   putProduct(producto: any): Observable<any> {
     return this.http.put(`${this.API_PRODUCTOS}/${producto.id}`, producto);
   }
+
+  saveProduct(producto: any): Observable<any> {
+    return this.http.post(this.API_PRODUCTOS, producto);
+  }
 }
