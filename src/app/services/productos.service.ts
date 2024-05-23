@@ -17,4 +17,16 @@ export class ProductosService {
   getCategory(category : string): Observable<any> {
     return this.http.get(this.API_PRODUCTOS);
   }
+
+  postProduct(producto: any): void {
+    this.http.post(this.API_PRODUCTOS, producto).subscribe();
+  }
+
+  deleteProduct(id: any): Observable<any> {
+    return this.http.delete(`${this.API_PRODUCTOS}/${id}`);
+  }
+
+  putProduct(producto: any): Observable<any> {
+    return this.http.put(`${this.API_PRODUCTOS}/${producto.id}`, producto);
+  }
 }

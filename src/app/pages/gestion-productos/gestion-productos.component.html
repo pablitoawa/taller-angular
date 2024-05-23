@@ -1,0 +1,68 @@
+<h1 class="text-center">Manage Products</h1>
+
+<div  style="width: 90%; margin: 0 auto">
+    <table class="table align-middle mb-3 bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        @for (item of productos; track item) {
+        <tbody>
+          <td>
+            <div class="d-flex align-items-center">
+              <img
+                src="{{ item.image }}"
+                alt=""
+                style="width: 45px; height: 45px"
+                class="rounded-circle"
+              />
+              <div class="ms-3">
+                <p class="fw-bold mb-1" id="prod-name">{{ item.title }}</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <p class="fw-bold mb-1" id="prod-total">
+              {{ item.category }}
+            </p>
+          </td>
+          <td>
+            <span
+              class="badge text-black"
+              id="prod-quantity"
+              style="font-size: 12px; color: white; padding: 4px 10px"
+              >${{ item.price }}</span
+            >
+          </td>
+          <td style="display: flex; justify-content: space-around">
+            <button
+              type="button"
+              class="btn btn-warning"
+              id="delete-product"
+              style="background-color: #ffca2c;"
+              (click)="edit(item.id)"
+            >
+              <i
+                ><img src="../../../assets/images/icons/edit.svg"
+              /></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="delete-product"
+              style="background-color: #dc3546;"
+              (click)="delete(item.id)"
+            >
+              <i
+                ><img src="../../../assets/images/icons/trash.svg"
+              /></i>
+            </button>
+          </td>
+        </tbody>
+        }
+      </table>
+</div>
