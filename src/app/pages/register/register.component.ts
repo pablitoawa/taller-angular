@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink,Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-register',
@@ -10,5 +11,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  servicio=inject(LoginService)
+  name:any;
+  rol:any;
+  direccion:any;
+  email:any;
+  password:any;
+
+  constructor(private router: Router) {}
+
+    guardar(formulario:any){
+      this.servicio.postRegister(formulario.value).subscribe();
+      this.router.navigate(['/home']);
+    }
 
 }

@@ -1,33 +1,39 @@
 <nav class="navbar navbar-expand-lg " style="background-color: #cb8587;">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="home" class="logo">Liadarkla</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="productos">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="nosotros">About us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="contacto">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="gestionproductos">Manage Products</a>
-          </li>
-          @if(ocultar != 'true'){
-          <li class="nav-item">
-            <a class="nav-link" routerLink="login">Login</a>
-          </li>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="home" class="logo">Liadarkla</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="productos">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="nosotros">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contacto">Contact</a>
+        </li>
+        @if(rol=='usuario' || rol=='administrador'){
+        <li class="nav-item">
+          <a class="nav-link" routerLink="gestionproductos">Manage Products</a>
+        </li>
         }
+        @if(rol=='usuario' || rol=='administrador'){
+        }@else{
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="register">Register</a>
         </li>
-        </ul>
-          <button class="btn btn-success" type="submit" routerLink="formulario">subscription form</button>
-      </div>
+        }
+      </ul>
+      <button class="btn btn-danger" type="submit" (click)="cerrarSesion()" style="margin-right: 2%;">Cerrar
+        Sesion</button>
+      <button class="btn btn-success" type="submit" routerLink="formulario">subscription form</button>
     </div>
-  </nav>
+  </div>
+</nav>
