@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink,Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +9,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  ocultar=localStorage.getItem('token')
+  rol=localStorage.getItem('rol')
+  constructor(private router: Router) {}
+  token=localStorage.getItem('token')
+  cerrarSesion(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('rol')
+    this.router.navigate(['/home']);
+  }
 }

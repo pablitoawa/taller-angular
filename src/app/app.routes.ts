@@ -8,6 +8,7 @@ import { ProductosDetallesComponent } from './components/productos-detalles/prod
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { GestionProductosComponent } from './pages/gestion-productos/gestion-productos.component';
+import { editorProductosGuard } from './guards/editor-productos.guard';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -17,7 +18,7 @@ export const routes: Routes = [
     {path: 'productos-detalles/:idProductos', component: ProductosDetallesComponent },
     {path: 'login', component: LoginComponent },
     {path: 'register', component: RegisterComponent },
-    {path: 'gestionproductos', component: GestionProductosComponent },
+    {path: 'gestionproductos', component: GestionProductosComponent, canActivate: [editorProductosGuard] },
 
 
     {path: '', redirectTo: 'home', pathMatch: 'full'},

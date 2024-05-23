@@ -1,16 +1,24 @@
 {
-    "users": [
-      {
-        "email": "edgarcar@gmail.com",
-        "password": "$2a$10$JGeGqEo59pN5uhs/NyVOZuVxAeVQ0czyJwrnI8/QtsXhtz9CUpYVO",
-        "rol": "usuario",
-        "id": 1
-      },
-      {
-        "email": "jonaAdmin@gmail.com",
-        "password": "$2a$10$DYR89Mf8z.T9WSlOxUm7be/RHU7OewIb9Ve0VLACzjdn6bvMUA5xa",
-        "rol": "administrador",
-        "id": 2
-      }
-    ]
-  }
+  "users": [
+    {
+      "email": "edgarcar@gmail.com",
+      "password": "$2a$10$JGeGqEo59pN5uhs/NyVOZuVxAeVQ0czyJwrnI8/QtsXhtz9CUpYVO",
+      "rol": "usuario",
+      "id": 1
+    },
+    {
+      "email": "jonaAdmin@gmail.com",
+      "password": "$2a$10$DYR89Mf8z.T9WSlOxUm7be/RHU7OewIb9Ve0VLACzjdn6bvMUA5xa",
+      "rol": "administrador",
+      "id": 2
+    },
+    {
+      "email": "edgarcat@cat.com",
+      "password": "$2a$10$vIuvUXYrZWJa0CQy9rPEhOLqqyFUKu0.kIL2CZ45oSRbfYPBDJ7mS",
+      "name": "Edgar",
+      "rol": "administrador",
+      "direccion": "Cat world",
+      "id": 3
+    }
+  ]
+}
