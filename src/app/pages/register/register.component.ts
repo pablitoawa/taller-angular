@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink,Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class RegisterComponent {
   servicio=inject(LoginService)
+  reload= inject(ProductosService);
   name:any;
   rol:any;
   direccion:any;
@@ -22,7 +24,8 @@ export class RegisterComponent {
 
     guardar(formulario:any){
       this.servicio.postRegister(formulario.value).subscribe();
-      this.router.navigate(['/home']);
+      window.location.reload();
+
     }
 
 }

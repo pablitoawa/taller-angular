@@ -13,12 +13,20 @@
       "id": 2
     },
     {
-      "email": "edgarcat@cat.com",
-      "password": "$2a$10$vIuvUXYrZWJa0CQy9rPEhOLqqyFUKu0.kIL2CZ45oSRbfYPBDJ7mS",
-      "name": "Edgar",
-      "rol": "administrador",
-      "direccion": "Cat world",
-      "id": 3
+      "id": 3,
+      "name": "Pablito",
+      "email": "cat@miaua.com",
+      "password": "$2a$10$uDwGWl13jqCBd7K9Xg7pIO18K7CxzVkctzixb5uJQjNkrh3H8BIH.",
+      "address": "avenue 17 Doral 437845",
+      "rol": "administrador"
+    },
+    {
+      "email": "liadarkla@hotmail.com",
+      "password": "$2a$10$oymUMEyl/dBLgzYICh3x3ervjj4MBUPhYmQ/cGSpherx8J9MP0MxC",
+      "name": "Pablo Bejarano",
+      "rol": "usuario",
+      "direccion": "Mundo Pablito 2",
+      "id": 4
     }
   ]
 }

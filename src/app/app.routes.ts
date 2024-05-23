@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { GestionProductosComponent } from './pages/gestion-productos/gestion-productos.component';
 import { editorProductosGuard } from './guards/editor-productos.guard';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -18,10 +19,10 @@ export const routes: Routes = [
     {path: 'productos-detalles/:idProductos', component: ProductosDetallesComponent },
     {path: 'login', component: LoginComponent },
     {path: 'register', component: RegisterComponent },
+    {path: 'usuario', component: UsuarioComponent },
     {path: 'gestionproductos', component: GestionProductosComponent, canActivate: [editorProductosGuard] },
 
 
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', component: Error404Component}
 ];
-    

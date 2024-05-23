@@ -31,9 +31,11 @@
         </li>
         }
       </ul>
-      <button class="btn btn-danger" type="submit" (click)="cerrarSesion()" style="margin-right: 2%;">Cerrar
+      @if (rol=='usuario' || rol=='administrador') {
+      <button class="btn btn-danger" type="submit" (click)="cerrarSesion()" style="margin-right: 1%;">Cerrar
         Sesion</button>
-      <button class="btn btn-success" type="submit" routerLink="formulario">subscription form</button>
+        <button class="btn btn-success" routerLink="usuario">Profile edit</button>
+      }
     </div>
   </div>
 </nav>
